@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Minimal Mobile Menu</title>
+  </head>
+  <body>
+    <div class="content">
+      <img
+        class="logo"
+        src="https://settimetechnologies.com/wp-content/uploads/2023/11/logoM.png"
+      />
+      <h1>Become Globally Certified with<br />Set-Time Digital Hub Academy</h1>
+    </div>
+
+    <div id="open-menu">&#x2630;</div>
+    <div id="shadow"></div>
+    <div id="close-menu">&#x2715;</div>
+    <div id="navbar">
+      <img
+        class="logo"
+        src="https://settimetechnologies.com/wp-content/uploads/2023/11/logoM.png"
+      />
+      <ul class="links">
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Our Services</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
+
+    <script>
+      const shadow = document.getElementById("shadow");
+      const closeMenu = document.getElementById("close-menu");
+      const openMenu = document.getElementById("open-menu");
+      const navbar = document.getElementById("navbar");
+
+      closeMenu.addEventListener("click", () => {
+        shadow.style.opacity = 0;
+        navbar.style.marginLeft = "-300px";
+        openMenu.style.display = "block";
+        closeMenu.style.display = "none";
+      });
+
+      openMenu.addEventListener("click", () => {
+        shadow.style.opacity = 1;
+        navbar.style.marginLeft = "0px";
+        openMenu.style.display = "none";
+        closeMenu.style.display = "block";
+      });
+    </script>
+  </body>
+</html>
