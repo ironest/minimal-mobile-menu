@@ -16,11 +16,20 @@
         src="https://settimetechnologies.com/wp-content/uploads/2023/11/logoM.png"
       />
       <ul class="links">
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Our Services</li>
-        <li>Courses</li>
-        <li>Contact Us</li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li>
+          <span id="toggle-sub-navbar"><span>Our Services</span><span id="toggle-sub-navbar-icon"></span></span>
+          <ul id="sub-navbar" class="links">
+            <li><a href="#">Tech Support</a></li>
+            <li><a href="#">Maintenance</a></li>
+            <li><a href="#">Sale of Software</a></li>
+            <li><a href="#">Solution Design</a></li>
+            <li><a href="#">Support Service</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Contact Us</a></li>
       </ul>
     </div>
     <div class="content">
@@ -36,6 +45,11 @@
       const openMenu = document.getElementById("open-menu");
       const navbar = document.getElementById("navbar");
 
+      const toggleSubNavbar = document.getElementById("toggle-sub-navbar");
+      const subNavbar = document.getElementById("sub-navbar");
+      const toggleSubNavbarIcon = document.getElementById("toggle-sub-navbar-icon");
+      let subNavbarOpen = false;
+
       closeMenu.addEventListener("click", () => {
         shadow.style.opacity = 0;
         navbar.style.marginLeft = "-300px";
@@ -48,6 +62,19 @@
         navbar.style.marginLeft = "0px";
         openMenu.style.display = "none";
         closeMenu.style.display = "block";
+      });
+
+      toggleSubNavbar.addEventListener("click", () => {
+
+
+        if (subNavbarOpen) {
+          subNavbar.style.height = "0";
+          toggleSubNavbarIcon.style.transform = 'rotate(45deg)';
+        } else {
+          subNavbar.style.height = "245px";
+          toggleSubNavbarIcon.style.transform = 'rotate(-135deg)';
+        }
+        subNavbarOpen = !subNavbarOpen;
       });
     </script>
   </body>
